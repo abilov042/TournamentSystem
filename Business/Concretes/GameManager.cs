@@ -1,6 +1,8 @@
 ﻿using Business.Abstracts;
 using DataAccess.Abstracts;
 using Entity.Concretes;
+using Entity.DTOs;
+using System.Collections.Generic;
 
 namespace Business.Concretes
 {
@@ -16,6 +18,11 @@ namespace Business.Concretes
         public void Add(Game game)
         {
             _gameDal.Add(game);
+        }
+
+        public List<GameDetailsDTO> GetGameDetailsDTOs()
+        {
+            return _gameDal.GetDetailsDTOs();
         }
     }
 }

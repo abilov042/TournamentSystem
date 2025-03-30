@@ -132,6 +132,7 @@
     <Compile Include="Concretes\TeamTournament.cs" />
     <Compile Include="Concretes\Tournament.cs" />
     <Compile Include="Concretes\User.cs" />
+    <Compile Include="DTOs\GameDetailsDTO.cs" />
     <Compile Include="DTOs\TeamTournamentDetailsDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -30,8 +30,21 @@ namespace WebApplication
             }
             if (!IsPostBack)
             {
-                LoadTeams();
+                LoadGames();
             }
+        }
+
+        private void LoadGames()
+        {
+            var games = _gameService.GetGameDetailsDTOs();
+            gvGames.DataSource = games;
+            gvGames.DataBind();
+        }
+
+        protected void btnShowForm_Click(object sender, EventArgs e)
+        {
+            pnlGameForm.Visible = true;
+            LoadTeams(); // Komandaları burada doldur
         }
 
         private void LoadTeams()
@@ -99,7 +112,8 @@ namespace WebApplication
             _teamTournamentService.Update(teamTournament1);
             _teamTournamentService.Update(teamTournament2);
 
-            Response.Redirect("Default.aspx");
+            pnlGameForm.Visible = false;
+            LoadGames();
 
         }
 
